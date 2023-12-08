@@ -1,6 +1,6 @@
 [project]
 name = "predica"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name = "Rahul Yadav" },
 ]
@@ -27,7 +27,7 @@ keywords = [
 ]
 
 [project.urls]
-Repository = "https://https://github.com/y-src/predica"
+Repository = "https://github.com/y-src/predica"
 Issues = "https://github.com/y-src/predica/issues"
 
 [build-system]
