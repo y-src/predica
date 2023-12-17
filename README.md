@@ -1,8 +1,12 @@
 # predica
 
------
-
 Predicates for use in higher-order functions.
+
+## Tasks
+- [x] Keep API as simple as possible. For instance, `P.*` to access all predicates.
+- [x] `Predicates` or `P` should **only** evalaute as predicates or return predicates.
+- [ ] Extend `P.and_` and `P.or` to take containers of predicates.
+- [ ] Improve usage example.
 
 ## Installation
 
@@ -41,8 +45,7 @@ ages_no_str = list(filter(lambda x: not is_str(x), ages))  # [1, 10, 100, 1000]
 new_ages_no_str = list(filter(P.negation(is_str), ages))  # [1, 10, 100, 1000]
 ```
 
-IMO this works best with `returns` [library](https://github.com/dry-python/returns) 
-(and is why I made this library to begin with) -
+IMO this works best with `returns` [library](https://github.com/dry-python/returns) or `result` [library](https://github.com/rustedpy/result), following is example with `Result` from `returns.result` -
 
 
 ```python
