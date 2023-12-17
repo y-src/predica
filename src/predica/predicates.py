@@ -63,7 +63,9 @@ class Predicates(object):
         return len(_sized) == 1
 
     @classmethod
-    def all(cls, _pred: Callable[[T], bool]) -> Callable[[Iterable[T]], bool]:
+    def all(
+            cls, _predicate: Callable[[T], bool]
+        ) -> Callable[[Iterable[T]], bool]:
         """
         Determines whether all elements of the iterable satisfy the predicate.
 
@@ -72,10 +74,12 @@ class Predicates(object):
         This is equivalent to special fold ``all`` from haskell standard library
         https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#g:14
         """
-        return lambda x: all(map(_pred, x))
+        return lambda x: all(map(_predicate, x))
 
     @classmethod
-    def any(cls, _pred: Callable[[T], bool]) -> Callable[[Iterable[T]], bool]:
+    def any(
+            cls, _predicate: Callable[[T], bool]
+        ) -> Callable[[Iterable[T]], bool]:
         """
         Determines whether any elements of the iterable satisfy the predicate.
 
@@ -84,7 +88,7 @@ class Predicates(object):
         This is equivalent to special fold ``any`` from haskell standard library
         https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#g:14
         """
-        return lambda x: any(map(_pred, x))
+        return lambda x: any(map(_predicate, x))
 
     @classmethod
     def and_(cls, _iterable: Iterable[bool]) -> bool:
